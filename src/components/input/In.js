@@ -1,5 +1,5 @@
 import 'date-fns';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import DateFnsUtils from '@date-io/date-fns';
 import {
     MuiPickersUtilsProvider,
@@ -22,7 +22,7 @@ const In = () => {
     const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
     const [message, setMessage] = useState("");
     const [selectedTheme, setSelectedTheme] = useState("Light");
-    const themeNames = ["Light", "Dark", "Chaeban", "Space", "Random", "Custom colors"];
+    const themeNames = ["Default", "Dark", "Chaeban", "Space", "Random", "Custom colors"];
 
     const handleChange = (variable) => (data) => {
         switch (variable) {
