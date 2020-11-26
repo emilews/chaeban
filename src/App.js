@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import In from './components/input/In';
-
-/** Main function and view. */
+import React, { Component } from 'react';
+import Routes from './routes/Routes';
+import './App.css';
 const App = () => {
   return (
-    <In />
+    <div>
+      <Routes />
+    </div>
   );
 }
 export default App;
