@@ -1,0 +1,30 @@
+.TextFieldStyle {
+    padding: 2em;
+    text-align: center;
+    left: 20%;
+}
+
+.PaperStyle {
+    width: 500px;
+    height: 300px;
+    margin: auto;
+    transform: translate(0%, 50%);
+    padding-top: 3em;
+
+}
+
+.HorCenter {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100vw; 
+}
+
+.VerCenter {
+    height: 50%;
+    position: absolute;
+}
+
+.Selectors {
+    right: 10%;
+}
