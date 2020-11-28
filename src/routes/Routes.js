@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import TransitionWrapper from "../components/transition/TransitionWrapper";
 import In from "../components/input/In";
 import Out from "../components/output/Out";
+import Floatie from "../components/fab/Floatie";
 const PrivateRoute = ({ component: Component, ...rest }) => {
 	return (
 		<Route
@@ -27,6 +28,7 @@ const Routes = () => {
 		<Router>
 			<div>
 				{renderRoutes()}
+				<Floatie/>
 			</div>
 		</Router>
 	);
