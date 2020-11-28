@@ -42,7 +42,7 @@ const In = () => {
         }
     };
     useEffect(() => {
-        saveData({date: selectedDate, message: message, theme: selectedTheme});
+        saveData({ date: selectedDate, message: message, theme: selectedTheme });
     }, [message, selectedTheme, selectedDate])
     return (
         <div>
@@ -120,10 +120,8 @@ const In = () => {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item xs={2}>
-                        <NavButton />
-                    </Grid>
                 </Grid>
+                <NavButton />
             </Paper>
 
         </div>
