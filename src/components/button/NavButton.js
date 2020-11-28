@@ -19,7 +19,7 @@ const NavButton = (props) => {
     }
     return (
         <div>
-            <IconButton className={"ButtonBase " + (isURLOutput() ? "NavButtonIn" : "NavButtonOut")} onClick={handleRedirect} variant="contained">{isURLOutput() ? <ArrowBackIcon/> : <ArrowForwardIcon/>}</IconButton>
+            <IconButton size="medium" className={isURLOutput() ? "NavButtonOut" : "NavButtonIn"} onClick={handleRedirect} variant="contained">{isURLOutput() ? <ArrowBackIcon/> : <ArrowForwardIcon/>}</IconButton>
         </div>
     );
 }

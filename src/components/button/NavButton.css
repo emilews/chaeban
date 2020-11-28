@@ -1,11 +1,9 @@
 .NavButtonIn {
+    margin-top: 1em !important;
     left: 45%;
 }
 
 .NavButtonOut {
-    left: 45%;
-}
-
-.ButtonBase {
     margin-top: 1em !important;
+    left: 5%;
 }
