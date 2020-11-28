@@ -16,14 +16,27 @@ import {
 } from '@material-ui/core';
 import NavButton from '../button/NavButton';
 import './In.css'
-import { saveData } from '../../utils/Utils';
+import { saveData, getSavedData } from '../../utils/Utils';
 
 
 const In = () => {
-    const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+    const [selectedDate, setSelectedDate] = useState(new Date('1998-08-18T21:11:54'));
     const [message, setMessage] = useState("");
     const [selectedTheme, setSelectedTheme] = useState("Default");
     const themeNames = ["Default", "Dark", "Chaeban", "Space", "Random"];
+
+    useEffect(() => {
+        const data = getSavedData();
+        if (data.message != null) {
+            setMessage(data.message);
+        }
+        if (data.date != null) {
+            setSelectedDate(new Date(data.date));
+        }
+        if (data.theme != null) {
+            setSelectedTheme(data.theme);
+        }
+    }, []);
 
     const handleChange = (variable) => (data) => {
         switch (variable) {
@@ -43,7 +56,10 @@ const In = () => {
     };
     useEffect(() => {
         saveData({ date: selectedDate, message: message, theme: selectedTheme });
-    }, [message, selectedTheme, selectedDate])
+    }, [message, selectedTheme, selectedDate]);
+    useEffect(() => {
+        saveData({ date: selectedDate, message: message, theme: selectedTheme });
+    }, [])
     return (
         <div>
             <Paper className="PaperStyle" square={false} elevation={3}>
@@ -123,7 +139,6 @@ const In = () => {
                 </Grid>
                 <NavButton />
             </Paper>
-
         </div>
     );
 }
