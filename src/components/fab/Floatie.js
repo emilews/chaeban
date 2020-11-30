@@ -10,7 +10,7 @@ const Floatie = () => {
     }
     return (
         <div className="FooterFloat">
-            <Fab color="white" aria-label="add">
+            <Fab aria-label="add">
                 <IconButton size="medium" className="" onClick={handleRedirect}><GitHubIcon /></IconButton>
             </Fab>
         </div>
