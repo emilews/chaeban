@@ -4,14 +4,17 @@
     left: 20%;
 }
 
-.PaperStyle {
+.PaperStyleIn {
     width: 30%;
     height: 300px;
     margin: auto;
     transform: translate(0%, 50%);
     padding-top: 3em;
-
 }
+.PaperStyleIn > div {
+    background-color:  var(--paperBackgroundColor);
+  }
+  
 
 .HorCenter {
     display: flex;
