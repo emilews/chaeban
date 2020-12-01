@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--backgroundColor);
 }
 
 code {
@@ -12,8 +13,11 @@ code {
     monospace;
 }
 
+button {
+  padding: .8rem;
+}
 
-/* Transition animations user between routes */
+/* Transition animations between routes */
 .SlideIn-appear {
   transform: translateX(30px);
   -webkit-transform: translateX(30px);
