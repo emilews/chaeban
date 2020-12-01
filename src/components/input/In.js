@@ -78,7 +78,7 @@ const In = () => {
                     justify="center"
                     alignItems="center"
                 >
-                    <Grid item xs={6}>
+                    <Grid item xs={8} sm={6}>
                         <TextField
                             id="message-tfield"
                             placeholder="Message"
@@ -95,7 +95,7 @@ const In = () => {
                             className="TextFieldStyle"
                         />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={10} sm={6}>
                         <Grid
                             container
                             direction="column"
