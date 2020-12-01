@@ -38,6 +38,9 @@ const In = () => {
         if (data.theme != null) {
             setSelectedTheme(data.theme);
             toggleTheme(data.theme);
+        }else{
+            setSelectedTheme("Default");
+            toggleTheme("Default");
         }
     }, []);
 
@@ -58,6 +61,7 @@ const In = () => {
                 break;
         }
     };
+    /** We save every time the user interacts with any form. And we save the first time as well to have something in localStorage. */
     useEffect(() => {
         saveData({ date: selectedDate, message: message, theme: selectedTheme });
     }, [message, selectedTheme, selectedDate]);
