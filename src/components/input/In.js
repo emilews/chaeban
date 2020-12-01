@@ -1,5 +1,5 @@
 import 'date-fns';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DateFnsUtils from '@date-io/date-fns';
 import {
     MuiPickersUtilsProvider,
@@ -17,14 +17,16 @@ import {
 import NavButton from '../button/NavButton';
 import './In.css'
 import { saveData, getSavedData } from '../../utils/Utils';
-
+import { ThemeSelectorContext } from "../themes/ThemeEngine";
 
 const In = () => {
     const [selectedDate, setSelectedDate] = useState(new Date('1998-08-18T21:11:54'));
     const [message, setMessage] = useState("");
     const [selectedTheme, setSelectedTheme] = useState("Default");
-    const themeNames = ["Default", "Dark", "Chaeban", "Space", "Random"];
-
+    const themeNames = ["Default", "Dark", "Chaeban", "Gradient"];
+    /** Context Theme Engine data */
+    const { toggleTheme } = useContext(ThemeSelectorContext);
+    /** Get saved data from localStorage */
     useEffect(() => {
         const data = getSavedData();
         if (data.message != null) {
@@ -35,6 +37,7 @@ const In = () => {
         }
         if (data.theme != null) {
             setSelectedTheme(data.theme);
+            toggleTheme(data.theme);
         }
     }, []);
 
@@ -48,6 +51,7 @@ const In = () => {
                 break;
             case 'theme':
                 setSelectedTheme(data);
+                toggleTheme(data);
                 break;
             default:
                 // Nothing
@@ -59,10 +63,11 @@ const In = () => {
     }, [message, selectedTheme, selectedDate]);
     useEffect(() => {
         saveData({ date: selectedDate, message: message, theme: selectedTheme });
-    }, [])
+    }, []);
+
     return (
         <div>
-            <Paper className="PaperStyle" square={false} elevation={3}>
+            <Paper className="PaperStyleIn" square={false} elevation={3}>
                 <Grid
                     container
                     direction="row"
