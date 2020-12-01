@@ -1,9 +1,10 @@
+/** Root routes module, here we wrap our components with the transition HOC. */
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import TransitionWrapper from "../components/transition/TransitionWrapper";
 import In from "../components/input/In";
 import Out from "../components/output/Out";
-import Floatie from "../components/fab/Floatie";
+/** Custom default PrivateRoute for rendering components. */
 const PrivateRoute = ({ component: Component, ...rest }) => {
 	return (
 		<Route
@@ -28,7 +29,6 @@ const Routes = () => {
 		<Router>
 			<div>
 				{renderRoutes()}
-				<Floatie/>
 			</div>
 		</Router>
 	);
