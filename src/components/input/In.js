@@ -20,7 +20,7 @@ import { saveData, getSavedData } from '../../utils/Utils';
 import { ThemeSelectorContext } from "../themes/ThemeEngine";
 
 const In = () => {
-    const [selectedDate, setSelectedDate] = useState(new Date('1998-08-18T21:11:54'));
+    const [selectedDate, setSelectedDate] = useState(new Date());
     const [message, setMessage] = useState("");
     const [selectedTheme, setSelectedTheme] = useState("Default");
     const themeNames = ["Default", "Dark", "Chaeban", "Gradient"];
