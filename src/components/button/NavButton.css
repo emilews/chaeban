@@ -7,3 +7,9 @@
     margin-top: 1em !important;
     left: 5%;
 }
+@media only screen and (max-width: 600px) {
+    .NavButtonIn {
+        margin-top: 1em !important;
+        left: 40%;
+    }
+}
