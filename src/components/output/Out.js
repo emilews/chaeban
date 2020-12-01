@@ -11,14 +11,11 @@ const Out = () => {
 
     const [message, setMessage] = useState("");
     const [date, setDate] = useState("");
-    const [selectedTheme, setSelectedTheme] = useState("");
 
     useEffect(() => {
         const data = getSavedData();
         setMessage(data.message);
         setDate(data.date);
-        setSelectedTheme(data.theme);
-
     }, []);
 
     return (
