@@ -1,3 +1,4 @@
+/** Transition HOC, applies when changing between routes. */
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 const TransitionWrapper = Page => {
