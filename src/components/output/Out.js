@@ -11,15 +11,18 @@ const Out = () => {
 
     const [message, setMessage] = useState("");
     const [date, setDate] = useState("");
-    const [theme, setTheme] = useState("");
+    const [selectedTheme, setSelectedTheme] = useState("");
 
     useEffect(() => {
         const data = getSavedData();
         setMessage(data.message);
         setDate(data.date);
-        setTheme(data.theme);
+        setSelectedTheme(data.theme);
+
     }, []);
+
     return (
+
         <div>
             <Paper className="PaperStyleOut" square={false} elevation={3}>
                 <NavButton />
@@ -45,7 +48,7 @@ const Out = () => {
                         <div className="MessageStyle">
                             {message}
                         </div>
-                        
+
                     </Grid>
                 </Grid>
             </Paper>
